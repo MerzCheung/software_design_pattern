@@ -9,4 +9,19 @@ package 结构型.外观模式;
 */
 
 public class Client {
+
+    public static void main(String[] args) {
+        SubSystem1 s1 = new SubSystem1();
+        SubSystem2 s2 = new SubSystem2();
+        SubSystem3 s3 = new SubSystem3();
+        SubSystem4 s4 = new SubSystem4();
+
+        AbstractFacade facade1 = new Facade1(s1, s2, s3);
+        facade1.method1();
+        facade1.method2();
+        System.out.println("--------------------------------");
+        AbstractFacade facade2 = new Facade2(s1, s3, s4);
+        facade2.method1();
+        facade2.method2();
+    }
 }

@@ -10,5 +10,23 @@ package 结构型.组合模式;
             它的主要作用是存储和管理子部件，通常包含 Add()、Remove()、GetChild() 等方法。
 */
 
+import 结构型.组合模式.安全方式.Composite;
+import 结构型.组合模式.安全方式.Leaf;
+
 public class Client {
+
+    public static void main(String[] args) {
+        // 透明方式
+        Composite c1 = new Composite();
+        Composite c2 = new Composite();
+        Leaf l1 = new Leaf("树叶1");
+        Leaf l2 = new Leaf("树叶2");
+        Leaf l3 = new Leaf("树叶3");
+        c1.add(c2);
+        c1.add(l1);
+        c2.add(l2);
+        c2.add(l3);
+        c1.operation();
+        // 安全方式
+    }
 }
